@@ -1,6 +1,9 @@
 name: "Validate Issues over Pull Requests"
 description: "Checks for a valid Issue number linked with the PR"
 author: "Harsh Mishra"
+branding:
+  icon: 'activity'
+  color: 'white'
 
 inputs:
   prbody:
