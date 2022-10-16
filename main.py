@@ -9,7 +9,7 @@ def main():
     Function to validate the Issue present over the Pull Request body.
     """
 
-    pattern = "#\d+"
+    pattern = "((?:Fixes|Resolves) #\d+)"
 
     # Get the PR body and the PR URL
     body = os.getenv("INPUT_PRBODY")
