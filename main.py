@@ -19,12 +19,11 @@ def main():
 
     # Get the Issue number
     try:
-        issue_num = re.search(pattern, body)[0].replace("#", "")
+        issue_num = re.search(pattern, body)[0]
         if "Resolves" in issue_num:
-            issue_num = issue_num.replace("Resolves", "")
+            issue_num = issue_num.replace("Resolves #", "")
         if "Fixes" in issue_num:
-            issue_num = issue_num.replace("Fixes", "")
-        
+            issue_num = issue_num.replace("Fixes #", "")
         issue_num = issue_num.strip()
         print(issue_num)
     except:
