@@ -24,7 +24,7 @@ def main():
             issue_num = issue_num.replace("Resolves", "")
         if "Fixes" in issue_num:
             issue_num = issue_num.replace("Fixes", "")
-            
+        
         issue_num = issue_num.strip()
         print(issue_num)
     except:
