@@ -59,7 +59,7 @@ def main():
 
     print("Valid flag is:", valid_code)
     print(f"valid={valid_code} >> $GITHUB_OUTPUT")
-    
-          
+
+
 if __name__ == "__main__":
     main()
