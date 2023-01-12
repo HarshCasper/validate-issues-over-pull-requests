@@ -19,7 +19,12 @@ def main():
 
     # Get the Issue number
     try:
-        issue_num = re.search(pattern, body)[0].replace("#", "")
+        issue_num = re.search(pattern, body)[0]
+        if "Resolves" in issue_num:
+            issue_num = issue_num.replace("Resolves #", "")
+        if "Fixes" in issue_num:
+            issue_num = issue_num.replace("Fixes #", "")
+        issue_num = issue_num.strip()
         print(issue_num)
     except:
         issue_num = "No issue number"
@@ -58,7 +63,7 @@ def main():
         )
 
     print("Valid flag is:", valid_code)
-    print(f"::set-output name=valid::{valid_code}")
+    print(f"valid={valid_code} >> $GITHUB_OUTPUT")
 
 
 if __name__ == "__main__":
